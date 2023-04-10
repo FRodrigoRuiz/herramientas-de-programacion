@@ -25,4 +25,12 @@ public static class LibroService{
     }
 
     public static LibroViewModel? Get(string codigo) => Libros.FirstOrDefault(x => x.Codigo.ToLower() == codigo.ToLower());
+
+    public static void Delete(string codigo){
+        var libroABorrar = Libros.FirstOrDefault(x => x.Codigo.ToLower() == codigo.ToLower());
+        if (libroABorrar != null)
+        {
+            Libros.Remove(libroABorrar);
+        }
+    }
 }

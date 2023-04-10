@@ -43,16 +43,17 @@ public class LibroController : Controller
         return RedirectToAction(nameof(Index));
     }
     
-
     public IActionResult Borrar(string codigo)
     {
-        // var libroABorrar = Get(codigo);
+        LibroViewModel libroViewModel = LibroService.Get(codigo);
+        return View(libroViewModel);
+    }
 
-        // if (libroABorrar != null){
-        //     Libros.Remove(libroABorrar);
-        // }
-        // Completar luego
-        return View();
+    [HttpPost]
+    public IActionResult ConfirmarBorrar(string codigo)
+    {
+        LibroService.Delete(codigo);
+        return RedirectToAction(nameof(Index));
     }
 
 

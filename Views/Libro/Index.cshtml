@@ -45,8 +45,8 @@
                     @Model[i].Precio
                 </td>
                 <td>
-                    <a asp-action="Informacion" asp-route-id="@Model[i].Codigo">Detalles</a> |
-                    <a asp-action="Borrar" asp-route-id="@Model[i].Codigo">Eliminar</a>
+                    <a asp-action="Informacion" asp-route-codigo="@Model[i].Codigo">Detalles</a> |
+                    <a asp-action="Borrar" asp-route-codigo="@Model[i].Codigo">Eliminar</a>
                 </td>
             </tr>
         }
