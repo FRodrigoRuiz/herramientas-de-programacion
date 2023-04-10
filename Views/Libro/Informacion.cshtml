@@ -1,0 +1,35 @@
+@model LibroViewModel;
+
+@{
+    ViewData["Title"] = "Informacion";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Informacion">
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <span>@Model.Titulo</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <span>@Model.Codigo</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Autor" class="control-label"></label>
+                <span>@Model.Autor</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <span>@Model.Precio</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>

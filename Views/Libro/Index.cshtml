@@ -1,0 +1,54 @@
+@model List<LibroViewModel>;
+
+@{
+    ViewData["Title"] = "Lista de libros";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+</div>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                Titulo
+            </th>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Autor
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                <a asp-action="Agregar">Agregar libro</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Model[i].Titulo
+                </td>
+                <td>
+                    @Model[i].Codigo
+                </td>
+                <td>
+                    @Model[i].Autor
+                </td>
+                <td>
+                    @Model[i].Precio
+                </td>
+                <td>
+                    <a asp-action="Informacion" asp-route-id="@Model[i].Codigo">Detalles</a> |
+                    <a asp-action="Borrar" asp-route-id="@Model[i].Codigo">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
